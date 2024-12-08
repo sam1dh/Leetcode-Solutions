@@ -130,4 +130,22 @@ bool twoSum(vector<int> &arr, int target){
 <h1> visualization :</h1>
 <img src="index1.png" alt="Two Pointer Technique" width="450">
 <img src="index2.png" alt="Two Pointer Technique" width="450">
+<h1>Code: </h1>
 
+```cpp
+
+bool twoSum(int n, vector<int> &arr, int target) {
+    unordered_map<int, int> mpp;
+// created the empty hashmap
+    for (int i = 0; i < n; i++) {
+        int curr_element = arr[i];
+        int complement = target - curr_element;
+    // searching the complement in the hashmap 
+        if (mpp.find(complement) != mpp.end()) {
+            return true ;
+        }
+   // if it is not found in the hashmap then insert the current_element in the key section and it's index in value section in hashmap
+        mpp[curr_element] = i;
+    }
+    return false ;
+```
