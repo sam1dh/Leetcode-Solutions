@@ -82,8 +82,50 @@ Disclaimer : The array must be sorted.
    <img src="https://media.geeksforgeeks.org/wp-content/uploads/20240930115146/two-pointer-tech--5.webp" alt="Two Pointer Technique" width="450">
    <img src="https://media.geeksforgeeks.org/wp-content/uploads/20240930115146/two-pointer-tech--6.webp" alt="Two Pointer Technique" width="450">
 </div>
+<h1>Code: </h1>
 
+```cpp
+bool twoSum(vector<int> &arr, int target){
+    // Sort the array
+    sort(arr.begin(), arr.end());
 
+    int left = 0, right = arr.size() - 1;
+
+    // Iterate while left pointer is less than right
+    while (left < right){
+        int sum = arr[left] + arr[right];
+
+        // Check if the sum matches the target
+        if (sum == target)
+            return true;
+        else if (sum < target)
+            left++; // Move left pointer to the right
+        else
+            right--; // Move right pointer to the left
+    }
+    // If no pair is found
+    return false;
+}
+```
+ <h2> Optimal Approach :</h2>
+ <p>
+   Steps:
+ </p>
+ <ul>
+   <li> Create an empty Hash Map with <b>key</b> and <b>value</b> int datatype. </li>
+    <li> Iterate through the array and for each number in the array: </li>
+   <ul>
+     <li> Check for the <b>Complement</b>: For each element in the array, calculate the <b>complement</b> </li>
+     <h3> Complement = Target−Current Element. </h3>
+     Now here <b>complement</b> is  based on the idea of determining what value is <b>"missing"</b> to reach a given <b>target</b> when added to the current value.
+     <li> Check <b>Hashmap</b> : Look for the complement value in key section of the hashmap.</li>
+     <ul>
+       <li> If the complement is found, the pair (current Element ,complement) is a solution equal to target.</li>
+       <li> If not Found , then add Current Element in the key and its index in value </li>
+     </ul>
+   </ul>
+   <li> If the loop completes without finding a pair, return that no pair exists.</li>
+ </ul>
 
 
 
