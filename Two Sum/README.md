@@ -109,7 +109,7 @@ bool twoSum(vector<int> &arr, int target){
 ```
  <h2> Optimal Approach :</h2>
  <p>
-   Steps:
+  <h2>Steps to Solve:</h2>
  </p>
  <ul>
    <li> Create an empty Hash Map with <b>key</b> and <b>value</b> int datatype. </li>
@@ -127,6 +127,7 @@ bool twoSum(vector<int> &arr, int target){
    <li> If the loop completes without finding a pair, return that no pair exists.</li>
  </ul>
 
-
-
+<h1> visualization :</h1>
+<img src="index1.png" alt="Two Pointer Technique" width="450">
+<img src="index2.png" alt="Two Pointer Technique" width="450">
 
