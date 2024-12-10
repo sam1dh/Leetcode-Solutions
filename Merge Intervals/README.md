@@ -45,16 +45,120 @@ vector<vector<int>> mergeOverlap(vector<vector<int>>& arr) {
 
         // If current interval overlaps with the last merged
         // interval, merge them 
-        if (curr[0] <= last[1]) 
+        if (curr[0] <= last[1])
+        {
             last[1] = max(last[1], curr[1]);
-        else 
+        }
+        else
+        { 
             res.push_back(curr);
+        }
     }
 
     return res;
 }
  
 ````
-  
+  <h1>Merging Intervals Logic</h1>
+    
+   <h2>Given:</h2>
+    <pre>
+arr = [
+    [1, 3],
+    [4, 5],
+    [6, 7],
+    [8, 10]
+]
+    </pre>
+    <h3>Interpretation:</h3>
+    <ul>
+        <li><code>arr[0][0] = 1</code>, <code>arr[0][1] = 3</code></li>
+        <li><code>arr[1][0] = 4</code>, <code>arr[1][1] = 5</code></li>
+        <li><code>arr[2][0] = 6</code>, <code>arr[2][1] = 7</code></li>
+        <li><code>arr[3][0] = 8</code>, <code>arr[3][1] = 10</code></li>
+    </ul>
+    <p><code>arr.back()</code> will give the <strong>last element</strong> of the array.</p>
+    
+  <h2>Suppose:</h2>
+    <pre>
+res = [[1, 3]]
+    </pre>
+    <p>Here:</p>
+    <ul>
+        <li><code>res.back()</code> = <code>[1, 3]</code></li>
+        <li><code>res.back()[1] == last[1]</code>, where <code>last = res.back()</code>, gives the <strong>second element</strong> of the last interval.
+            <ul>
+                <li><code>res.back()[1] = 3</code></li>
+                <li><code>last[1] = 3</code></li>
+            </ul>
+        </li>
+        <li><code>res.back()[0] == last[0]</code>, where <code>last = res.back()</code>, gives the <strong>first element</strong> of the last interval.
+            <ul>
+                <li><code>res.back()[0] = 1</code></li>
+                <li><code>last[0] = 1</code></li>
+            </ul>
+        </li>
+    </ul>
+    
+   <h2>Now, compare:</h2>
+    <pre>
+arr = [
+    [1, 3], [4, 5], [6, 7], [8, 10]
+]
+    </pre>
+    <p>For <code>i = 2</code>:</p>
+    <ul>
+        <li><code>arr[i][0] == curr[0]</code>: This gives the <strong>first element</strong> of the current interval.
+            <ul>
+                <li><code>arr[2][0] = 4</code></li>
+                <li><code>curr[0] = 4</code></li>
+            </ul>
+        </li>
+        <li><code>arr[i][1] == curr[1]</code>: This gives the <strong>second element</strong> of the current interval.
+            <ul>
+                <li><code>arr[2][1] = 5</code></li>
+                <li><code>curr[1] = 5</code></li>
+            </ul>
+        </li>
+    </ul>
+    
+  <h2>Compare <code>curr[0] <= last[1]</code>:</h2>
+    <ul>
+        <li>Example:
+            <ul>
+                <li><code>curr[0] = 4</code></li>
+                <li><code>last[1] = 5</code></li>
+                <li><code>4 <= 5</code> is <code>true</code>.</li>
+            </ul>
+        </li>
+    </ul>
+    
+   <h2>If <code>true</code>:</h2>
+    <p>Merge the intervals:</p>
+     <p>Swap the end points of the result interval and current interval</p>
+    <pre>
+last[1] = max(last[1], curr[1]);
+    </pre>  
+   <h2>Otherwise:</h2>
+    <p>Add the current interval to <code>res</code>:</p>
+    <pre>
+   res.push_back(curr);
+    </pre>
+    
+  <h2>Example:</h2>
+    <pre>
+Input:
+arr = [ [1, 3], [4, 5], [6, 7], [8, 10] ] 
+res = [ [1, 3] ]      
+Output:
+res = [ [1, 3] , [4, 5] ]
+This ouput for the Index 2 so you can iterte every interval and Get Result.
+  </pre>
+    
+  <h2>Final Notes:</h2>
+    <ol>
+        <li>This explanation ensures clarity of the merging process and the role of <code>curr</code> and <code>last</code>.</li>
+
+  </ol>
 
        
