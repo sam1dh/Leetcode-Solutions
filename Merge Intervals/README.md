@@ -19,7 +19,7 @@ Merge all the <B>overlapping intervals</B> into one and The result which should 
   </ul>
   <ul>
    <li>After Sorting , It will be easy to Merge intervals by comparing the end point of first interval and Start point of Second Interval </b>.</li>
-   <img src="Index (1).png" alt="example" width="450" height = "300">
+   <img src="" alt="example" width="450" height = "300">
     <li>  This allows us to easily identify overlapping intervals by comparing each interval with the last merged interval </li>
   </ul>
 
