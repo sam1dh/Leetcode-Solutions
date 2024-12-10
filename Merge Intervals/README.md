@@ -9,17 +9,18 @@ Merge all the <B>overlapping intervals</B> into one and The result which should 
 
 <h2> Steps to solve : </h2>
 <ul>
- <h3>
   <ul>
-    <li>First, sort the intervals based on their starting points.</li>
+    <li>First, Sort the intervals based on their starting points.</li>
        
    ![example](https://www.interviewbit.com/blog/wp-content/uploads/2021/11/contagious-fashion-1024x382.png)
      <li><b>Disclaimer:</b></li>
-     <li>If intervals' starting positions have the same value, then sorting will be based on their ending points.</li>   
-     
-        
+     <li>If Intervals' starting positions have the same value, then sorting will be based on their ending points.</li>   
+     ![example](Index.png)        
   </ul>
-</h3>
+  <ul>
+   <li>This allows us to easily identify overlapping intervals by comparing each interval with the <b> last merged interval</b>.</li>
+   
+  </ul>
 
 </ul>
   
