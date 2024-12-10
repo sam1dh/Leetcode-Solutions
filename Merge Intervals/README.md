@@ -12,42 +12,16 @@ Merge all the <B>overlapping intervals</B> into one and The result which should 
  <h3>
   <ul>
     <li>First, sort the intervals based on their starting points.</li>
-    <p>Example: [(1,4),(7,9),(3,6),(8,10)]</p>
-    <ul>
-      <li>After sorting based on the starting position:</li>
-      <ul>
-        <li>[(1,4), (3,6), (7,9), (8,10)]</li>
-      </ul>
-    </ul>
-
-  <ul>
-      <li><b>Disclaimer:</b></li>
-      <ul>
-        <li>If intervals' starting positions have the same value, then sorting will be based on their ending points.</li>
-      </ul>
-    </ul>
-
-   <p>Example: [(1,4),(7,9),(3,6),(7,3),(8,10)]</p>
-    <ul>
-      <li>After sorting:</li>
-      <ul>
-        <li>[(1,4), (3,6), (7,3), (7,9), (8,10)]</li>
-      </ul>
-    </ul>
-
-  <li>After sorting, this allows us to easily identify <b>overlapping intervals</b> by comparing each interval with the last merged interval.</li>
-    
-  <ul>
+       
+   ![example](https://www.interviewbit.com/blog/wp-content/uploads/2021/11/contagious-fashion-1024x382.png)
+     <li><b>Disclaimer:</b></li>
+     <li>If intervals' starting positions have the same value, then sorting will be based on their ending points.</li>   
+     
         
-      <p>Example: [(1,4), (3,6), (7,3), (7,9), (8,10)]</p>
-      <ul>
-        <li>Now check at Index: 0</li>
-        <ul>
-          <li>(1,4)</li>
-        </ul>
-      </ul>
-    </ul>
   </ul>
 </h3>
 
 </ul>
+  
+
+       
