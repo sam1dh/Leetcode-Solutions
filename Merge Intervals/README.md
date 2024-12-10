@@ -5,21 +5,22 @@ Merge all the <B>overlapping intervals</B> into one and The result which should 
 <h1> Example :</h1>
 
 ![example](carbon.png)
-![Merge Overlapping Intervals](https://www.interviewbit.com/blog/wp-content/uploads/2021/11/merge-overlapping-intervals-951x1024.png)
+<img src="https://www.interviewbit.com/blog/wp-content/uploads/2021/11/merge-overlapping-intervals-951x1024.png" alt="Merge Overlapping Intervals" width="450">
 
 <h2> Steps to solve : </h2>
 <ul>
   <ul>
     <li>First, Sort the intervals based on their starting points.</li>
        
-   ![example](https://www.interviewbit.com/blog/wp-content/uploads/2021/11/contagious-fashion-1024x382.png)
+   <img src="https://www.interviewbit.com/blog/wp-content/uploads/2021/11/contagious-fashion-1024x382.png" alt="example" width="450">
      <li><b>Disclaimer:</b></li>
      <li>If Intervals' starting positions have the same value, then sorting will be based on their ending points.</li>   
-     ![example](Index.png)        
+    <img src="Index.png" alt="example" width="450" height = "300">    
   </ul>
   <ul>
-   <li>This allows us to easily identify overlapping intervals by comparing each interval with the <b> last merged interval</b>.</li>
-   
+   <li>After Sorting , It will be easy to Merge intervals by comparing the end point of first interval and Start point of Second Interval </b>.</li>
+   <img src="Index (1).png" alt="example" width="450" height = "300">
+    <li>  This allows us to easily identify overlapping intervals by comparing each interval with the last merged interval </li>
   </ul>
 
 </ul>
