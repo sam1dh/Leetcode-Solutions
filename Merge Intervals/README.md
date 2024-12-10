@@ -5,7 +5,7 @@ Merge all the <B>overlapping intervals</B> into one and The result which should 
 <h1> Example :</h1>
 
 ![example](carbon.png)
-<img src="https://www.interviewbit.com/blog/wp-content/uploads/2021/11/merge-overlapping-intervals-951x1024.png" alt="Merge Overlapping Intervals" width="450">
+![example](https://www.interviewbit.com/blog/wp-content/uploads/2021/11/merge-overlapping-intervals-951x1024.png)
 
 <h2> Steps to solve : </h2>
 <ul>
@@ -21,10 +21,40 @@ Merge all the <B>overlapping intervals</B> into one and The result which should 
    <li>After Sorting , It will be easy to Merge intervals by comparing the end point of first interval and Start point of Second Interval </b>.</li>
    <img src="2.png" alt="example" width="450" height = "300">
     <li>  This allows us to easily identify overlapping intervals by comparing each interval with the last merged interval </li>
+    <li> Now, Iterate over each interval and if the current interval overlaps with the last merged interval, then merge them both.</li>
     <img src="1.png" alt="example" width="450" height = "300">
+    <li> Append the merged interval to the result.</li>
+    <img src="Index (2).png" alt="example" width="450" height = "300">
   </ul>
-
+Refernce Link : https://www.geeksforgeeks.org/merging-intervals/#expected-approach-checking-overlapping-intervals-only-onlogn-time-and-o1-space
 </ul>
+ <h1> Code :</h1>
+ 
+``` cpp
+vector<vector<int>> mergeOverlap(vector<vector<int>>& arr) {
+
+    // Sort intervals based on start values
+    sort(arr.begin(), arr.end());
+  
+    vector<vector<int>> res;
+    res.push_back(arr[0]);
+
+    for (int i = 1; i < arr.size(); i++) {
+        vector<int>& last = res.back();
+        vector<int>& curr = arr[i];
+
+        // If current interval overlaps with the last merged
+        // interval, merge them 
+        if (curr[0] <= last[1]) 
+            last[1] = max(last[1], curr[1]);
+        else 
+            res.push_back(curr);
+    }
+
+    return res;
+}
+ 
+````
   
 
        
