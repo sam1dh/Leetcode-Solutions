@@ -29,13 +29,36 @@
         <img src="https://media.geeksforgeeks.org/wp-content/uploads/20240606181147/isFull-Operation-in-Stack-(1).webp" alt="isFull Operation in Stack" width = 500; height: auto;">
     </ul>
 
-<h2>Example Usage:</h2>
-    <pre>
-        Stack stack;
-        stack.push(10);    // Inserts 10 into the stack
-        stack.push(20);    // Inserts 20 into the stack
-        stack.pop();       // Removes 20 from the stack
-        stack.top();       // Returns 10 (top element)
-        stack.isEmpty();   // Returns false (stack is not empty)
-        stack.isFull();    // Returns true (if stack size limit is reached)
-    </pre>
+<h2>
+    Creation of Stack and Implementation of Stack.
+</h2>
+## Code Example
+
+```cpp
+#include <iostream>
+#include <stack>
+using namespace std;
+
+int main() {
+    stack<int> st;
+
+    // Push operation
+    st.push(10); // Push 10 into the stack
+    st.push(20); // Push 20 into the stack
+
+    // Pop operation
+    st.pop(); // Removes the top element (20)
+
+    // Access the top element
+    cout << "Top element is: " << st.top() << endl; // Output: 10
+
+    // Check if the stack is empty
+    if (st.empty()) {
+        cout << "Stack is empty." << endl;
+    } else {
+        cout << "Stack is not empty." << endl;
+    }
+
+    return 0;
+}
+
